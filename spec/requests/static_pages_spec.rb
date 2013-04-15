@@ -1,60 +1,36 @@
 require 'spec_helper'
 
+
 describe "StaticPages" do
+  
   let(:base_title) { "Ruby on Rails Tutorial Sample App" }
+  subject {page}
 
   describe "Contact Page" do
-    it "should have the content 'Sample App'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/contact'
-      page.should have_selector('h1', text: 'Contact')
-    end
-    it "should have the right title" do
-      visit '/static_pages/contact'
-      page.should have_selector('title', 
-                            text: "#{base_title} | Contact")
-    end
+    before {visit contact_path}
+
+    it  { should have_selector('h1', text: 'Contact') }
+    it { should have_selector('title', text: full_title('Contact')) }
   end
 
   describe "Home Page" do
-    it "should have the content 'Sample App'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/home'
-      page.should have_selector('h1', text: 'Sample App')
-    end
-    it "should have the right title" do
-      visit '/static_pages/home'
-      page.should have_selector('title', 
-                            text: "#{base_title} | Home")
-    end
+    before {visit root_path}
+
+    it { should have_selector('h1', text: 'Welcome to the Sample App') }
+    it { should have_selector('title', text: full_title('Home')) }
   end
 
   describe "Help Page" do
-    it "should have the content 'Help'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/help'
-      page.should have_selector('h1', text: 'Help')
-    end
+    before {visit help_path}
 
-    it "should have the right title" do
-      visit '/static_pages/help'
-      page.should have_selector('title', 
-                            text: "#{base_title} | Help")
-    end
+    it { should have_selector('h1', text: 'Help') }
+    it { should have_selector('title', text: full_title('Help')) }
   end
 
-    describe "About Page" do
-    it "should have the content 'About Us'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/about'
-      page.should have_selector('h1', text: 'About Us')
-    end
+  describe "About Page" do
+    before {visit about_path}
 
-    it "should have the right title" do
-      visit '/static_pages/about'
-      page.should have_selector('title', 
-                        text: "#{base_title} | About Us")
-    end
+    it { should have_selector('h1', text: 'About Us') }
+    it  { should have_selector('title', text: full_title('About Us')) }
   end
-
 end
