@@ -155,7 +155,7 @@ input, textarea, select, .uneditable-input {
 }
 
 #error_explanation {
-	color: #F00;
+	color: #BD2608;
 	ul {
 		list-style: none;
 		margin: 0 0 18px 0;
@@ -167,8 +167,4 @@ input, textarea, select, .uneditable-input {
 	@extend .error;
 }
 
-.alert {
-	clear: both;
-	width: 100%;
-	height: 20px;
-}
+
