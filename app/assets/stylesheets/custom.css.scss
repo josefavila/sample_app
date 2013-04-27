@@ -54,7 +54,7 @@ p {
 	float: left;
 	margin-right: 10px;
 	font-size: 1.7em;
-	color: #FFF;
+	color: #303030;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	padding-top: 9px;
@@ -63,7 +63,7 @@ p {
 }
 
 #logo:hover {
-	color: #FFF;
+	color: #303030;
 	text-decoration: none;
 }
 
@@ -182,4 +182,33 @@ input, textarea, select, .uneditable-input {
 	}
 }
 
+/*  MICROPOSTS  */ 
 
+.microposts {
+	list-style: none;
+	margin: 5px 0 0;
+	li {
+		padding: 5px 0;
+		border-top: 1px solid #E8E8E8;
+	}
+}
+
+.content {
+	display: block;
+}
+.timestamp {
+	color: $grayLight;
+	font-style: italic;
+	font-size: 10px;
+	text-align: right;
+}
+.gravatar { 
+	float: left;
+	margin-right: 10px;	
+}
+aside {
+	textarea {
+		height: 100px;
+		margin-bottom: 2px;
+	}
+}
